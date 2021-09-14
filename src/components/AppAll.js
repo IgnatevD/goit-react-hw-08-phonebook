@@ -1,11 +1,10 @@
 /** @format */
 
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Navigation from "./Navigation";
 import UserMenu from "./UserMenu";
 import AuthNav from "./AuthNav";
 import { authSelectors } from "../redux/auth";
-// import { useEffect } from "react";
 
 const styles = {
   header: {
@@ -18,11 +17,6 @@ const styles = {
 
 export default function AppAll() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(authOperations.fetchCurrentUser());
-  // }, [dispatch]);
 
   return (
     <header style={styles.header}>

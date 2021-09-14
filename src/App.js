@@ -15,12 +15,12 @@ const LoginView = lazy(() => import("./views/LoginView"));
 const Contacts = lazy(() => import("./views/Contacts"));
 
 export default function App() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
 
-  useEffect(() => {
-    dispatch(authOperations.fetchCurrentUser());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(authOperations.fetchCurrentUser());
+  // }, [dispatch]);
 
   return (
     <Container>

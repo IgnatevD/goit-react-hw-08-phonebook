@@ -12,7 +12,6 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import { todosReducer } from "./todos";
 import allReducer from "../redux/contacts/contacts-reduser-api";
 import { authReducer } from "./auth";
 

@@ -15,17 +15,6 @@ export const fetchContacts = () => async (dispatch) => {
   }
 };
 
-// export const contactsFetch = createAsyncThunk(
-//   "/contacts/fetchContact",
-//   async (_, { rejectWithValue }) => {
-//     try {
-//       const { data } = await axios.get("/contacts");
-//       return data;
-//     } catch (error) {
-//       return rejectWithValue(error);
-//     }
-//   }
-// );
 
 export const contactsFetchPost = createAsyncThunk(
   "/contacts/contactsFetchPost",

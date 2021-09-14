@@ -7,10 +7,6 @@ import { contactsFetchDelete, contactsFetchPost } from "./contacts-operation";
 const entris = createReducer([], {
   [allActions.fetchContactSucess]: (_, { payload }) => payload,
 
-  // [contactsFetch.fulfilled]: (_, { payload }) => {
-  //   return payload;
-  // },
-
   [contactsFetchPost.fulfilled]: (state, { payload }) => {
     return payload ? [...state, payload] : state;
   },

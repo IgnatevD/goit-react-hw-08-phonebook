@@ -1,3 +1,5 @@
+/** @format */
+
 .section {
   color: white;
   text-align: center;
@@ -18,5 +20,4 @@
   height: 100%;
   margin: 0 auto;
   padding: 25px 15px 0px 20px;
-
 }

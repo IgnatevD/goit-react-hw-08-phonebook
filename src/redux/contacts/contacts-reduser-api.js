@@ -2,16 +2,14 @@
 
 import { createReducer, combineReducers } from "@reduxjs/toolkit";
 import allActions from "./contacts-actions";
-import {
-  contactsFetch,
-  contactsFetchDelete,
-  contactsFetchPost,
-} from "./contacts-operation";
+import { contactsFetchDelete, contactsFetchPost } from "./contacts-operation";
 
 const entris = createReducer([], {
-  [contactsFetch.fulfilled]: (_, { payload }) => {
-    return payload;
-  },
+  [allActions.fetchContactSucess]: (_, { payload }) => payload,
+
+  // [contactsFetch.fulfilled]: (_, { payload }) => {
+  //   return payload;
+  // },
 
   [contactsFetchPost.fulfilled]: (state, { payload }) => {
     return payload ? [...state, payload] : state;
@@ -22,9 +20,9 @@ const entris = createReducer([], {
 });
 
 const isLoding = createReducer(false, {
-  [contactsFetch.pending]: () => true,
-  [contactsFetch.fulfilled]: () => false,
-  [contactsFetch.rejected]: () => false,
+  [allActions.fetchContactRequest]: () => true,
+  [allActions.fetchContactSucess]: () => false,
+  [allActions.fetchContactError]: () => false,
 
   [contactsFetchPost.pending]: () => true,
   [contactsFetchPost.fulfilled]: () => false,
@@ -36,8 +34,8 @@ const isLoding = createReducer(false, {
 });
 
 const error = createReducer(null, {
-  [contactsFetch.rejected]: (state, action) => action.payload,
-  [contactsFetch.fulfilled]: () => null,
+  [allActions.fetchContactError]: (state, action) => action.payload,
+  [allActions.fetchContactSucess]: () => null,
 
   [contactsFetchPost.rejected]: (state, action) => action.payload,
   [contactsFetchPost.fulfilled]: () => null,

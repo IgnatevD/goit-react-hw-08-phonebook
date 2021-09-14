@@ -1,14 +1,11 @@
 /** @format */
 
-import React from "react";
-import PropTypes from "prop-types";
-import ContactForm from "./ContactForm/ContactForm";
-import ContactList from "./ContactList/ContactList";
+import Filter from "../components/Filter/Filter";
+import ContactForm from "components/ContactForm/ContactForm";
+import ContactList from "components/ContactList/ContactList";
+import s from "./Contacts.module.css";
 
-import Filter from "./Filter/Filter";
-import s from "../components/App.module.css";
-
-const App = () => {
+export default function Contacts() {
   return (
     <>
       <section className={s.section}>
@@ -26,12 +23,4 @@ const App = () => {
       </section>
     </>
   );
-};
-
-App.propTypes = {
-  contacts: PropTypes.array,
-  name: PropTypes.string,
-  number: PropTypes.string,
-};
-
-export default App;
+}

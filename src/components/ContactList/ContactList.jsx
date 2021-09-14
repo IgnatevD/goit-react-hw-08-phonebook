@@ -3,7 +3,7 @@
 import s from "./ContactList.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  contactsFetch,
+  fetchContacts,
   contactsFetchDelete,
 } from "../../redux/contacts/contacts-operation";
 import { useEffect } from "react";
@@ -18,7 +18,7 @@ const ContactList = () => {
   const deleteContact = (id) => dispatch(contactsFetchDelete(id));
 
   useEffect(() => {
-    dispatch(contactsFetch());
+    dispatch(fetchContacts());
   }, [dispatch]);
 
   return (

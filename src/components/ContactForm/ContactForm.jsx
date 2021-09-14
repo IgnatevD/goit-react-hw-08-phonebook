@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from "uuid";
 import PropTypes from "prop-types";
 import s from "../ContactForm/ContactForm.module.css";
 import { useDispatch } from "react-redux";
-// import allActions from "../../redux/contacts/contacts-actions";
 import * as contactsOperation from "../../redux/contacts/contacts-operation";
 
 const ContactForm = () => {

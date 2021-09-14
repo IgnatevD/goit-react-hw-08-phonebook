@@ -85,7 +85,7 @@ select {
   }
 }
 
-button {
+.button {
   width: 520px;
   cursor: pointer;
   margin-top: 15px;
@@ -96,7 +96,7 @@ button {
   margin: 0 auto;
 }
 
-button:hover {
+.button:hover {
   background: rgb(223, 11, 64);
   color: white;
 }

@@ -17,6 +17,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     marginBottom: 15,
+    textAlign: "left",
   },
 };
 

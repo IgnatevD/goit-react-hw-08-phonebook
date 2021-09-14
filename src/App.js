@@ -68,7 +68,13 @@ export default function App() {
         <>
           <AppAll />
           <Switch>
-            <Suspense fallback={<p>Загружаем...</p>}>
+            <Suspense
+              fallback={
+                <div class="loader">
+                  <div class="loader_inner"></div>
+                </div>
+              }
+            >
               <PublicRoute exact path="/">
                 <HomeView />
               </PublicRoute>

@@ -15,8 +15,6 @@ const LoginView = lazy(() => import("./views/LoginView"));
 const Contacts = lazy(() => import("./views/Contacts"));
 
 export default function App() {
-  // const isFetchingCurrentUser = useSelector(authSelectors.getIsLoggedIn);
-
   const dispatch = useDispatch();
 
   useEffect(() => {

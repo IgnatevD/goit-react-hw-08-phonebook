@@ -32,8 +32,8 @@ export default function App() {
           <Switch>
             <Suspense
               fallback={
-                <div class="loader">
-                  <div class="loader_inner"></div>
+                <div className="loader">
+                  <div className="loader_inner"></div>
                 </div>
               }
             >

@@ -15,7 +15,6 @@ export const fetchContacts = () => async (dispatch) => {
   }
 };
 
-
 export const contactsFetchPost = createAsyncThunk(
   "/contacts/contactsFetchPost",
   async (newContact, { rejectWithValue, getState }) => {
@@ -28,7 +27,6 @@ export const contactsFetchPost = createAsyncThunk(
         alert(`Ошибка, контакт с данным именем ${newContact.name} уже есть`);
         return null;
       }
-      // const { data } = await axios.post("/contacts", newContact);
       const contacts = await conactsAPI.fetchConactsPost(newContact);
 
       return contacts;

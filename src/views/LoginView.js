@@ -69,7 +69,7 @@ export default function LoginView() {
           />
         </label>
 
-        <button type="submit" class="button">
+        <button type="submit" className="button">
           Войти
         </button>
       </form>

@@ -17,6 +17,7 @@ const styles = {
 
 export default function AppAll() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+
   return (
     <header style={styles.header}>
       <Navigation />

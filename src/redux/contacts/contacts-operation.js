@@ -1,6 +1,5 @@
 /** @format */
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 import * as conactsAPI from "../../servis/contacts-API";
 import allActions from "./contacts-actions";
 

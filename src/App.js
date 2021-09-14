@@ -50,7 +50,6 @@ const HomeView = lazy(() => import("./views/HomeView"));
 const RegisterView = lazy(() => import("./views/RegisterView"));
 const LoginView = lazy(() => import("./views/LoginView"));
 const Contacts = lazy(() => import("./views/Contacts"));
-const UploadView = lazy(() => import("./views/UploadView"));
 
 export default function App() {
   const dispatch = useDispatch();
@@ -96,9 +95,6 @@ export default function App() {
               </PublicRoute>
               <PrivateRoute path="/contacts" redirectTo="/login">
                 <Contacts />
-              </PrivateRoute>
-              <PrivateRoute path="/upload" redirectTo="/login">
-                <UploadView />
               </PrivateRoute>
             </Suspense>
           </Switch>

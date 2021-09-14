@@ -8,7 +8,7 @@ export const fetchContacts = () => async (dispatch) => {
   dispatch(allActions.fetchContactRequest());
 
   try {
-    const { data } = await axios.get("/contacts");
+    const data = await conactsAPI.fetchConacts();
     dispatch(allActions.fetchContactSucess(data));
   } catch (error) {
     dispatch(allActions.fetchContactError(error.message));

@@ -1,13 +1,14 @@
 /** @format */
 
 import { Suspense, lazy, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Switch } from "react-router-dom";
 import AppAll from "./components/AppAll";
 import Container from "./components/Container";
 import PrivateRoute from "./components/PrivateRoute";
 import PublicRoute from "./components/PublicRoute";
 import { authOperations } from "./redux/auth";
+import authSelectors from "redux/auth/auth-selectors";
 
 const HomeView = lazy(() => import("./views/HomeView"));
 const RegisterView = lazy(() => import("./views/RegisterView"));
@@ -16,12 +17,17 @@ const Contacts = lazy(() => import("./views/Contacts"));
 
 export default function App() {
   const dispatch = useDispatch();
+  const isLoding = useSelector(authSelectors.getIsLoding);
 
   useEffect(() => {
     dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
 
-  return (
+  return !isLoding ? (
+    <div className="loader">
+      <div className="loader_inner"></div>
+    </div>
+  ) : (
     <Container>
       <>
         <AppAll />

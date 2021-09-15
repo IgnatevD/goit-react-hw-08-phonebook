@@ -23,42 +23,49 @@ export default function App() {
     dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
 
-  return !isLoding ? (
-    <div className="loader">
-      <div className="loader_inner"></div>
-    </div>
-  ) : (
+  return (
     <Container>
-      <>
-        <AppAll />
-        <Switch>
-          <Suspense
-            fallback={
-              <div className="loader">
-                <div className="loader_inner"></div>
-              </div>
-            }
-          >
-            <PublicRoute exact path="/">
-              <HomeView />
-            </PublicRoute>
-            <PublicRoute
-              exact
-              path="/register"
-              redirectTo="/contacts"
-              restricted
+      {!isLoding ? (
+        <div className="loader">
+          <div className="loader_inner"></div>
+        </div>
+      ) : (
+        <>
+          <AppAll />
+          <Switch>
+            <Suspense
+              fallback={
+                <div className="loader">
+                  <div className="loader_inner"></div>
+                </div>
+              }
             >
-              <RegisterView />
-            </PublicRoute>
-            <PublicRoute exact path="/login" redirectTo="/contacts" restricted>
-              <LoginView />
-            </PublicRoute>
-            <PrivateRoute path="/contacts" redirectTo="/login">
-              <Contacts />
-            </PrivateRoute>
-          </Suspense>
-        </Switch>
-      </>
+              <PublicRoute exact path="/">
+                <HomeView />
+              </PublicRoute>
+              <PublicRoute
+                exact
+                path="/register"
+                redirectTo="/contacts"
+                restricted
+              >
+                <RegisterView />
+              </PublicRoute>
+              <PublicRoute
+                exact
+                path="/login"
+                redirectTo="/contacts"
+                restricted
+              >
+                <LoginView />
+              </PublicRoute>
+              <PrivateRoute path="/contacts" redirectTo="/login">
+                <Contacts />
+              </PrivateRoute>
+            </Suspense>
+          </Switch>
+        </>
+      )}
     </Container>
   );
 }

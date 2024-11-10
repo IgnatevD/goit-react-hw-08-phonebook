@@ -1,3 +1,8 @@
+.container {
+    padding: 40px;
+}
+
+
 .title {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -28,8 +33,9 @@
     height: 100%;
     backface-visibility: hidden;
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px 15px;
     box-sizing: border-box;
+    overflow: auto;
 }
 
 .contact-card-front {

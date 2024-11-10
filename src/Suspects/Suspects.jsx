@@ -5,7 +5,7 @@ import { contacts } from "./const";
 
 
 const Suspects = () => {
-  const [flipped, setFlipped] = useState(Array(20).fill(false));
+  const [flipped, setFlipped] = useState(Array(100).fill(false));
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
   const [currentIndex, setCurrentIndex] = useState(null);
@@ -34,7 +34,7 @@ const Suspects = () => {
   };
 
   return (
-   <>
+   <div className="container">
      <h1 className="title">Suspects and Witnesses</h1>
      <div className="contacts-list">
        {contacts.map((contact, index) => (
@@ -46,11 +46,14 @@ const Suspects = () => {
           <div className="contact-card-front">
             <h3>{contact.name}</h3>
             <p><strong>Phone:</strong> {contact.phone}</p>
-            <p><strong>Age:</strong> {contact.age}</p>
             <p><strong>City:</strong> {contact.city}</p>
+            <p><strong>Сompany:</strong> {contact.company}</p>
+            <p><strong>Signal:</strong> {contact.company}</p>
+            <p><strong>Email:</strong> {contact.email}</p>
+            <p><strong>Info:</strong> {contact.info}</p>
           </div>
           <div className="contact-card-back">
-            <p>{contact.info}</p>
+            <p>{contact.testimony}</p>
           </div>
         </div>
        ))}
@@ -74,7 +77,7 @@ const Suspects = () => {
        <button onClick={handlePasswordSubmit}>Подтвердить</button>
        <button onClick={closeModal}>Отмена</button>
      </Modal>
-   </>
+   </div>
 );
 };
 

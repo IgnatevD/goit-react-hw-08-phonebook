@@ -46,8 +46,12 @@
     background-color: #f8f8f8;
     transform: rotateY(180deg);
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
+}
+
+.contact-card-back-text {
+    padding: 10px;
 }
 
 .contact-card.flipped .contact-card-front {

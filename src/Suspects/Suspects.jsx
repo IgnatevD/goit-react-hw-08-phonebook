@@ -23,7 +23,7 @@ const Suspects = () => {
       setPasswordInput('');
       setErrorMessage('');
     } else {
-      setErrorMessage('Неверный пароль!');
+      setErrorMessage('Incorrect password!');
     }
   };
 
@@ -53,7 +53,7 @@ const Suspects = () => {
             <p><strong>Info:</strong> {contact.info}</p>
           </div>
           <div className="contact-card-back">
-            <p>{contact.testimony}</p>
+            <p className="contact-card-back-text">{contact.testimony}</p>
           </div>
         </div>
        ))}
@@ -66,16 +66,16 @@ const Suspects = () => {
       className="modal"
       overlayClassName="modal-overlay"
      >
-       <h2>Введите пароль для доступа</h2>
+       <h2>Enter the password for access (matches the password received in the task)</h2>
        <input
         type="password"
         value={passwordInput}
         onChange={(e) => setPasswordInput(e.target.value)}
-        placeholder="Введите пароль"
+        placeholder="Enter password"
        />
        {errorMessage && <p className="error-message">{errorMessage}</p>}
-       <button onClick={handlePasswordSubmit}>Подтвердить</button>
-       <button onClick={closeModal}>Отмена</button>
+       <button onClick={handlePasswordSubmit}>Confirm</button>
+       <button onClick={closeModal}>Cancel</button>
      </Modal>
    </div>
 );
